@@ -26,8 +26,29 @@ console.log(chooseyEndings(17, 'ily'));
 */
 
 let chooseyEndings = function(words, suffix) {
-  // Your code here
+
+  if ( typeof words === "object"){
+    let endWords = words.filter((word) => word.endsWith(suffix));
+      return endWords;
+  } else {
+    return [];
+  }
 };
+
+// console.log(chooseyEndings(['family', 'hound', 'catalyst', 'fly', 'timidly', 'bond'], 'ly'));
+// // [ 'family', 'fly', 'timidly' ]
+//
+// console.log(chooseyEndings(['family', 'hound', 'catalyst', 'fly', 'timidly', 'bond'], 'nd'));
+// // [ 'hound', 'bond' ]
+//
+// console.log(chooseyEndings(['simplicity', 'computer', 'felicity'], 'icity'));
+// // [ 'simplicity', 'felicity' ]
+//
+// console.log(chooseyEndings(['simplicity', 'computer', 'felicity'], 'ily'));
+// // [ ]
+//
+// console.log(chooseyEndings(17, 'ily'));
+// // [ ]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
@@ -35,4 +56,4 @@ try {
   module.exports = chooseyEndings;
 } catch (e) {
   module.exports = null;
-}
+}

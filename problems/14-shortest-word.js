@@ -15,8 +15,22 @@ console.log(shortestWord('do what you enjoy'));         // 'do'
 */
 
 let shortestWord = function(sentence) {
-  // Your code here
+  let toArray = sentence.split(' ');
+  let countMin = toArray.length;
+  let shortestW = '';
+  let wordMin = toArray.reverse().forEach((word) => {
+    if (word.length < countMin) {
+      countMin = word.length
+      shortestW = word;
+      return shortestW;
+    }
+    });
+
+  return shortestW;
 };
+// console.log(shortestWord('what a wonderful life'));     // 'a'
+// console.log(shortestWord('the quick brown fox jumps')); // 'fox'
+// console.log(shortestWord('do what you enjoy'));         // 'do'
 
 // Your code here
 
@@ -26,4 +40,4 @@ try {
   module.exports = shortestWord;
 } catch (e) {
   module.exports = null;
-}
+}
